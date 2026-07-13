@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+body {
+  @apply bg-slate-50 text-slate-900 min-h-screen antialiased;
+  font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+}
+
+/* 스크롤바 미세 커스텀 (기업용 대시보드에 어울리는 깔끔함) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* CSS 애니메이션 추가 (모달 등장 등) */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
